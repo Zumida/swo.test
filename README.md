@@ -4,6 +4,9 @@ libswo test projects.
 MingwによるWindowsGUIアプリケーション作成支援ライブラリSWOのテストプロジェクト群です。  
 It is a test projects of the WindowsGUI application creation support library SWO by Mingw.  
 
+記述サンプルを兼ねていますが、動作を保障するものではありません。  
+Operation is not secured although it serves as the description sample.  
+
 Usage
 -----
 1. 動作環境に合わせてsetenv.bat内の環境変数を設定する。  
