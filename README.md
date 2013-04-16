@@ -1,8 +1,8 @@
 libswo test projects.
 =====================
 
-MingwによるWindowsGUIアプリケーション作成支援ライブラリSWOのテストプロジェクト群です。
-It is a test project group of the WindowsGUI application creation support library SWO by Mingw.
+MingwによるWindowsGUIアプリケーション作成支援ライブラリSWOのテストプロジェクト群です。  
+It is a test projects of the WindowsGUI application creation support library SWO by Mingw.  
 
 Usage
 -----
