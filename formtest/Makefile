@@ -1,31 +1,27 @@
-TARGET = formtest.exe
-
-SOURCES = ./
-
+TARGET   := $(notdir $(basename $(CURDIR))).exe
+SOURCES  := ./
+DEPEND   := depend
 SRCS_C   := $(foreach dir,$(SOURCES),$(notdir $(wildcard $(dir)/*.c)))
 SRCS_CPP := $(foreach dir,$(SOURCES),$(notdir $(wildcard $(dir)/*.cpp)))
 SRCS_RC  := $(foreach dir,$(SOURCES),$(notdir $(wildcard $(dir)/*.rc)))
+OBJS     := $(SRCS_RC:%.rc=%.o) $(SRCS_C:%.c=%.o) $(SRCS_CPP:%.cpp=%.o)
+LIBS     := -lswo
 
-DEPEND = depend
+LIB_DIRS := -L$(SWO_HOME)/lib
+INCLUDE_DIRS := -I$(SWO_HOME)/include
+CFLAGS   :=  -g $(INCLUDE_DIRS) -DWIN32 -DUNICODE -D_UNICODE
+CXXFLAGS := -Wall -O2
+LDFLAGS  := $(LIB_DIRS) -mwindows -static
 
-OBJS = $(SRCS_RC:%.rc=%.o) $(SRCS_C:%.c=%.o) $(SRCS_CPP:%.cpp=%.o)
+CPP := cpp
+CC  := gcc
+CX  := g++
+LD  := g++
+AR  := ar
+RM  := del /F
+RES := windres
 
-LIBS = -lswo
-LIB_DIRS = -L$(SWO_HOME)/lib
-INCLUDE_DIRS = -I$(SWO_HOME)/include
-
-CFLAGS =  -g $(INCLUDE_DIRS) -DWIN32 -DUNICODE -D_UNICODE
-CXXFLAGS =-Wall -O2
-LDFLAGS = $(LIB_DIRS) -mwindows -static
-
-CPP = cpp
-CC = gcc
-CX = g++
-LD = g++
-AR = ar
-RM = del /F
-RES = windres
-
+.SUFFIXES:
 .SUFFIXES: .rc .c .cpp .o
 
 .rc.o:
