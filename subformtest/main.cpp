@@ -5,7 +5,7 @@ using namespace swo;
 
 int WINAPI _tWinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPTSTR pCmdLine, int showCmd) {
 
-	Application app;
+	Application& app = Application::getInstance();
 
 	Form& form1 = app.createObject<Form>();
 	Form& form2 = app.createObject<Form>(form1);
