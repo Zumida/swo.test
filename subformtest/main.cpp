@@ -1,24 +1,11 @@
-#include "application.hpp"
+#include "swo.hpp"
 #include "form.hpp"
 
-using namespace swo;
+void Application::main(void) {
 
-int WINAPI _tWinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPTSTR pCmdLine, int showCmd) {
+	Form& form1 = Form::create();
+	Form& form2 = Form::create(form1);
 
-	Application& app = Application::getInstance();
-
-	Form& form1 = app.createObject<Form>();
-	Form& form2 = app.createObject<Form>(form1);
 	form1.show();
 	form2.show();
-
-	return app.run();
 }
-
-#ifndef wWinMain
-int main(const int argc, const char* argv[]) {
-	::_tsetlocale(LC_ALL, L"");
-
-	return _tWinMain(::GetModuleHandle(NULL), NULL, ::GetCommandLine(), SW_SHOW);
-}
-#endif
