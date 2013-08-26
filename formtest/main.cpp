@@ -1,7 +1,7 @@
 #include "swo.hpp"
 #include "form.hpp"
 
-void Application::main(void) {
+void Application::initialize(void) {
 
 	Form& form = Form::create();
 	form.show();
