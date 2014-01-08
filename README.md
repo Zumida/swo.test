@@ -20,7 +20,7 @@ Usage
 
 License
 -------
-Copyright &copy; 2013 Zumida  
+Copyright &copy; 2014 Zumida  
 Distributed under the [MIT License][mit].  
 
 [MIT]: http://www.opensource.org/licenses/mit-license.php
