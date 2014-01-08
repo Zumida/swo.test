@@ -9,7 +9,8 @@ LIBS     := -lswo
 
 LIB_DIRS := -L$(SWO_HOME)/lib
 INCLUDE_DIRS := -I$(SWO_HOME)/include
-CFLAGS   := -Wall -O2 -g $(INCLUDE_DIRS) -DWIN32 -DUNICODE -D_UNICODE
+CFLAGS   := -Wall -O2 -g $(INCLUDE_DIRS)
+CXFLAGS  := -std=c++11 $(CFLAGS)
 LDFLAGS  := $(LIB_DIRS) -mwindows -static
 
 CPP := cpp
@@ -30,7 +31,7 @@ RES := windres
 	$(CC) $(CFLAGS) -c $<
 
 .cpp.o:
-	$(CX) $(CFLAGS) -c $<
+	$(CX) $(CXFLAGS) -c $<
 
 .PHONY: all
 all: $(DEPEND) $(TARGET)
@@ -46,6 +47,6 @@ clean:
 
 $(DEPEND): $(SRCS_C) $(SRCS_CPP)
 	-@ $(RM) $@
-	-@ for %%i in ($^); do $(CPP) $(CFLAGS) -MM %%i >> $@
+	-@ for %%i in ($^); do $(CPP) $(CXFLAGS) -MM %%i >> $@
 
 -include $(DEPEND)
