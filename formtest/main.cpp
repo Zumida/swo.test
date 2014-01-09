@@ -3,8 +3,12 @@
 
 using namespace swo;
 
-void Application::initialize(void) {
+struct MyApp : public Runner {
+	void run(void) {
 
-	Form& form = Form::create();
-	form.show();
-}
+		Form& form = Form::create();
+		form.show();
+	}
+};
+
+Application app(new MyApp);

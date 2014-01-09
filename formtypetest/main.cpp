@@ -3,9 +3,13 @@
 
 using namespace swo;
 
-void Application::initialize(void) {
+struct MyApp : public Runner {
+	void run(void) {
 
-	Form& form = Form::create();
-	form.setFormType(Form::ToolWindow);
-	form.show();
-}
+		Form& form = Form::create();
+		form.setFormType(Form::ToolWindow);
+		form.show();
+	}
+};
+
+Application app(new MyApp);

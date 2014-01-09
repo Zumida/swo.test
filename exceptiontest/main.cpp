@@ -4,10 +4,14 @@
 
 using namespace swo;
 
-void Application::initialize(void) {
+struct MyApp : public Runner {
+	void run(void) {
 
-	Form& form = Form::create();
-	form.show();
+		Form& form = Form::create();
+		form.show();
 
-	throw std::exception();
-}
+		throw std::exception();
+	}
+};
+
+Application app(new MyApp);

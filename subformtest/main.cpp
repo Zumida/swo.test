@@ -3,11 +3,15 @@
 
 using namespace swo;
 
-void Application::initialize(void) {
+struct MyApp : public Runner {
+	void run(void) {
 
-	Form& form1 = Form::create();
-	Form& form2 = Form::create(form1);
+		Form& form1 = Form::create();
+		Form& form2 = Form::create(form1);
 
-	form1.show();
-	form2.show();
-}
+		form1.show();
+		form2.show();
+	}
+};
+
+Application app(new MyApp);
