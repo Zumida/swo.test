@@ -3,9 +3,11 @@
 
 using namespace swo;
 
-struct MyApp : public Runner {
+class MyApp : public Runner {
+private:
 	Form& form = Form::create();
 
+public:
 	void run(void) {
 		/*
 		 * 標準出力/標準エラー出力/標準ログ出力は、
@@ -28,6 +30,5 @@ struct MyApp : public Runner {
 		form.setText(L"あいうえお")
 			.show();
 	}
-};
 
-Application app(new MyApp);
+} myapp;
