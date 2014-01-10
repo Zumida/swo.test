@@ -3,7 +3,8 @@
 
 using namespace swo;
 
-class MyApp : public Runner {
+MakeApplication(
+class MyRunner : public Runner {
 private:
 	Form& form = Form::create();
 
@@ -31,4 +32,4 @@ public:
 			.show();
 	}
 
-} myapp;
+});

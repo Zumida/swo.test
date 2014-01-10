@@ -3,7 +3,8 @@
 
 using namespace swo;
 
-struct MyApp : public Runner {
+MakeApplication(
+class MyRunner : public Runner {
 	void run(void) {
 
 		Form& form = Form::create();
@@ -11,6 +12,4 @@ struct MyApp : public Runner {
 
 		Application::terminate(-1);
 	}
-};
-
-Application app(new MyApp);
+});

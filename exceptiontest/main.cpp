@@ -4,7 +4,8 @@
 
 using namespace swo;
 
-struct MyApp : public Runner {
+MakeApplication(
+class MyRunner : public Runner {
 	void run(void) {
 
 		Form& form = Form::create();
@@ -12,6 +13,4 @@ struct MyApp : public Runner {
 
 		throw std::exception();
 	}
-};
-
-Application app(new MyApp);
+});
