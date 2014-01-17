@@ -12,7 +12,6 @@ public:
 	const char* what() const throw() {return message.c_str();}
 };
 
-MakeApplication(
 class MyRunner : public Runner {
 
 public:
@@ -21,9 +20,9 @@ public:
 		 * 標準出力/標準エラー出力/標準ログ出力は、
 		 * DebugViewまたはgdbにて確認すること！
 		 *
-		 * 当該サンプルでは、
-		 * MakeApplication()マクロの影響で
-		 * ログ出力時の行番号が同じになる。
+		 * logtestと比較すると、
+		 * MyRunnerの定義をMakeApplication()マクロの外に記述しているため、
+		 * ログ出力時の行番号が正常となる。
 		 */
 		LOG_I(L"通常ログ出力");
 
@@ -47,5 +46,6 @@ public:
 			LOG_EX(e);
 		}
 	}
+};
 
-});
+MakeApplication(MyRunner);
