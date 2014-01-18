@@ -32,18 +32,6 @@ public:
 		str = string::replaceAll(str, L"AB", L"abcabcabc");
 		Stdlog << str << std::endl;
 
-		Stdlog << L"string::basename(c:\\abc/def.txt)" << std::endl;
-		Stdlog << string::basename(L"c:\\abc/def.txt") << std::endl;
-
-		Stdlog << L"string::basename(c:\\def.txt)" << std::endl;
-		Stdlog << string::basename(L"c:\\def.txt") << std::endl;
-
-		Stdlog << L"string::basename(\\def.txt)" << std::endl;
-		Stdlog << string::basename(L"\\def.txt") << std::endl;
-
-		Stdlog << L"string::basename(def.txt)" << std::endl;
-		Stdlog << string::basename(L"def.txt") << std::endl;
-
 		form.setText(L"あいうえお")
 			.show();
 	}
