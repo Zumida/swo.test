@@ -1,0 +1,8 @@
+#ifndef RESOURCE_H_INCLUDED
+#define RESOURCE_H_INCLUDED
+
+//#define ID_ICON_SWO  1000
+#define ID_ICON_SWO2 1001
+#define ID_ICON_SWO3 1002
+
+#endif

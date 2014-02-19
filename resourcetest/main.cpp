@@ -1,6 +1,8 @@
 #include "swo.hpp"
 #include "form.hpp"
 
+#include "resource.h"
+
 using namespace swo;
 
 class MyRunner : public Runner {
@@ -12,11 +14,11 @@ private:
 public:
 	MyRunner()
 	: Runner(),
-	  icon(L"SWOICON2"),
 	  form1(Form::create()),
 	  form2(Form::create(form1)) {}
 
 	void run(void) {
+		icon.set(ID_ICON_SWO2),
 
 		form1.setText(L"リソース確認テスト")
 			.show();

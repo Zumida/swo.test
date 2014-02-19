@@ -1,3 +1,5 @@
 /* resource.rc */
-SWOICON ICON "swo.ico"
-SWOICON2 ICON "swo2.ico"
+#include "resource.h"
+
+ID_ICON_SWO  ICON "swo.ico"
+ID_ICON_SWO2 ICON "swo2.ico"
